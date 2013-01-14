@@ -1,8 +1,8 @@
 language: php
 
 php:
-  - 5.3
-  - 5.4
+    - 5.3
+    - 5.4
 
 env: TEST_SERVER="http://localhost:8080/server.php"
 
@@ -14,6 +14,6 @@ before_install:
 before_script:
     - composer install --dev
     - php-cgi -b 127.0.0.1:9000 &
-    - nginx -p test -c nginx.conf.dist
+    - sudo nginx -p test -c nginx.conf.dist
 
 script: phpunit --coverage-text
