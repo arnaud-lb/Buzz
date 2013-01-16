@@ -2,7 +2,7 @@ language: php
 
 php:
     - 5.3.3
-    # - 5.4
+    - 5.4
 
 env: TEST_SERVER="http://localhost:8080/server.php"
 
@@ -14,4 +14,4 @@ before_install:
     - sudo nginx -p test -c nginx.conf.dist
 
 before_script: composer install --dev
-script: phpunit --debug
+script: ./composer/bin/phpunit
